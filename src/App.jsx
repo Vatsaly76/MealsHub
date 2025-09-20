@@ -5,12 +5,13 @@ import Meal from './Food_Recipe/Meal'
 
 const App = () => {
   const [cuisine, setCuisine] = useState('Canadian');
+  const [mealData, setMealData] = useState([]);
 
   return (
     <div>
-      <Navbar />
+      <Navbar setMealData={setMealData} />
       <Cuisines cuisine={cuisine} setCuisine={setCuisine} />
-      <Meal cuisine={cuisine} />
+      <Meal cuisine={cuisine} mealData={mealData} setMealData={setMealData} />
     </div>
   )
 }

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
-const Meal = ({ cuisine }) => {
-  const [mealData, setMealData] = useState([]);
+const Meal = ({ cuisine, mealData, setMealData }) => {
 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
@@ -9,11 +8,11 @@ const Meal = ({ cuisine }) => {
         `https://www.themealdb.com/api/json/v1/1/filter.php?a=${cuisine}`
       )
       const data = await api.json();
-      console.log(data.meals);
+      // console.log(data.meals);
       setMealData(data.meals || []) // Handle case where meals might be null
     }
     fetchDataFromAPI()
-  }, [cuisine]);
+  }, [cuisine, setMealData]);
 
   return (
     <div>

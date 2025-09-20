@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({ setMealData }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    // You can add search functionality here later
-    console.log('Searching for:', searchTerm);
+    const api = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
+    )
+    const data = await api.json();
+    // console.log("search results:",data.meals);
+    setMealData(data.meals || []);
   };
 
   return (
