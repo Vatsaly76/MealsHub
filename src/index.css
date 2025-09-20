@@ -148,7 +148,7 @@ body::-webkit-scrollbar {
 
 .nav-btn:hover {
   background: linear-gradient(45deg, #ff6347, #ff4500);
-  border-color: #ff6347;
+  border: none;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
 }

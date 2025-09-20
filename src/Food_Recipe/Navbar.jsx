@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { FaHome } from "react-icons/fa";
+import { MdFavorite } from "react-icons/md";
+import { IoMdSearch } from "react-icons/io";
 
 const Navbar = ({ setMealData }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,7 +36,7 @@ const Navbar = ({ setMealData }) => {
               className='search-input'
             />
             <button type="submit" className='search-btn'>
-              🔍
+              <IoMdSearch className='search-icon' />
             </button>
           </div>
         </form>
@@ -41,11 +44,11 @@ const Navbar = ({ setMealData }) => {
 
       <div className='navbar-actions'>
         <button className='nav-btn'>
-          <span className='nav-icon'>🏠</span>
+          <FaHome className='nav-icon' />
           Home
         </button>
         <button className='nav-btn'>
-          <span className='nav-icon'>❤️</span>
+          <MdFavorite className='nav-icon' />
           Favorites
         </button>
       </div>
